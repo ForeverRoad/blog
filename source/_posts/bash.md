@@ -32,6 +32,8 @@ categories: linux
 
 ```
 
+<!-- more -->
+
 2. 查看命令信息
 
 > 查看简要说明

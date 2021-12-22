@@ -28,6 +28,8 @@ DELTE /data/student
 
 ```
 
+<!-- more -->
+
 
 #### 简单的QueryString语句
 

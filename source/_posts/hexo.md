@@ -24,6 +24,8 @@ hexo init
 npm install
 ```
 
+<!-- more -->
+
 #### hexo简单使用
 
 1. 上来先换主题，一般github上很多，这里使用next,下载到themes目录下

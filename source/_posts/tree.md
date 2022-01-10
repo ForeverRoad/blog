@@ -34,7 +34,7 @@ categories: 数据结构
 	+ 前序遍历：根左右
 	+ 中序遍历：左根右
 	+ 后续遍历：左右根
-- 层级遍历，一般使用队列实现，根据队列和栈的特性，一层一层遍历
+
 
 
 ``` Java
@@ -112,4 +112,32 @@ categories: 数据结构
         return result;
 
     }
+```
+
+- 层级遍历，一般使用队列实现，根据队列和栈的特性，一层一层遍历
+
+``` Java
+// 广度优先
+public static List<Integer> bfs(Node node){
+        List<Integer> result = new ArrayList<>();
+        Queue<Node> queue = new LinkedList<>();
+
+        if (node ==null){
+            return result;
+        }
+        queue.add(node);
+        while (queue.size()>0){
+            Node poll = queue.poll();
+
+            result.add(poll.val);
+            if (poll.left !=null){
+                queue.add(poll.left);
+            }
+            if (poll.right !=null){
+                queue.add(poll.right);
+            }
+        }
+        return result;
+    }
+
 ```

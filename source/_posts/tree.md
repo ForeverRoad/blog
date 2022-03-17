@@ -39,15 +39,15 @@ categories: 数据结构
 
 ``` Java
 	// 前序遍历，按照根,右，左入栈，然后根左右出栈
-	public static List<Integer> pre(Node head) {
+	public static List<Integer> pre(TreeNode head) {
         List<Integer> result = new ArrayList<>();
         if (head == null) {
             return result;
         }
-        Stack<Node> stack = new Stack<>();
+        Stack<TreeNode> stack = new Stack<>();
         stack.push(head);
         while (!stack.isEmpty()) {
-            Node node = stack.pop();
+            TreeNode node = stack.pop();
             result.add(node.val);
             if (node.right != null) {
                 stack.push(node.right);
@@ -61,14 +61,14 @@ categories: 数据结构
     }
 
 	// 中序遍历，先一直遍历到最左节点才能操作，所以不能像前序一样入栈出站，调整
-    public static List<Integer> mid(Node head) {
+    public static List<Integer> mid(TreeNode head) {
 
         List<Integer> result = new ArrayList<>();
         if (head == null) {
             return result;
         }
-        Stack<Node> stack = new Stack<>();
-        Node cur = head;
+        Stack<TreeNode> stack = new Stack<>();
+        TreeNode cur = head;
         while (cur != null || !stack.isEmpty()) {
         	// 先把左侧入栈，直到最底部
             if (cur != null) {
@@ -87,16 +87,16 @@ categories: 数据结构
     }
 
     // 跟前序遍历一样，不过只是调整入栈顺序为根左右，然后根右左出栈，最后翻转成左右根的顺序
-    public static List<Integer> after(Node head) {
+    public static List<Integer> after(TreeNode head) {
 
         List<Integer> result = new ArrayList<>();
         if (head == null) {
             return result;
         }
-        Stack<Node> stack = new Stack<>();
+        Stack<TreeNode> stack = new Stack<>();
         stack.push(head);
         while (!stack.isEmpty()) {
-            Node node = stack.pop();
+            TreeNode node = stack.pop();
             result.add(node.val);
 
             if (node.left != null) {
@@ -118,16 +118,16 @@ categories: 数据结构
 
 ``` Java
 // 广度优先
-public static List<Integer> bfs(Node node){
+public static List<Integer> bfs(TreeNode root){
         List<Integer> result = new ArrayList<>();
-        Queue<Node> queue = new LinkedList<>();
+        Queue<TreeNode> queue = new LinkedList<>();
 
-        if (node ==null){
+        if (root ==null){
             return result;
         }
-        queue.add(node);
+        queue.add(root);
         while (queue.size()>0){
-            Node poll = queue.poll();
+            TreeNode poll = queue.poll();
 
             result.add(poll.val);
             if (poll.left !=null){
